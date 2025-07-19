@@ -6,11 +6,11 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class MasterService {
-  apiURl: string = "https://projectapi.gerasim.in/api";
+  apiURl: string = "/api";
 
   constructor(private http: HttpClient) {}
 
   getLocations(): Observable<any[]> {
-    return this.http.get<any[]>("${this.baseUrl}/BusBooking/GetBusLocations");
+    return this.http.get<any[]>(`${this.apiURl}/BusBooking/GetBusLocations`);
   }
 }
