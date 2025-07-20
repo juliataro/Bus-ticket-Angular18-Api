@@ -10,10 +10,12 @@
         <div class="row w-100 text-white">
           <div class="col-md-3 d-flex align-items-center">
             <div class="input-group">
+              <div class="bg-primary text-white p-3">Test Bootstrap</div>
+
               <span class="input-group-text"
                 ><i class="bi bi-bus-front"></i
               ></span>
-              <select class="form-select" name="fromLocation" title="from">
+              <select class="form-select" name="fromLocation">
                 <option value="" selected>From Location</option>
                 @for (item of locations$| async; track $index) {
                 <option [value]="item.locationId">
@@ -33,7 +35,7 @@
               <span class="input-group-text"
                 ><i class="bi bi-bus-front"></i
               ></span>
-              <select class="form-select" name="toLocation" title="to">
+              <select class="form-select" name="toLocation">
                 <option value="" selected>To Location</option>
                 @for (item of locations$| async; track $index) {
                 <option [value]="item.locationId">
@@ -67,4 +69,61 @@
   </section>
 
   <!-- Buses List -->
+  <section id="buses-list" class="my-4">
+    <h2>Available Buses</h2>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-3" style="background-color: #abb1b7">
+          <div class="row g-0">
+            <div
+              class="col-md-3 d-flex flex-column justify-content-center align-items-center"
+            >
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+            </div>
+            <div class="col-md-9">
+              <div class="card-body row">
+                <div class="col-md-2">
+                  <p class="card-text">
+                    <strong></strong>
+                  </p>
+                  <p class="card-text">Departure</p>
+                </div>
+                <div class="col-md-2">
+                  <p class="card-text"><strong>16 hr</strong></p>
+                  <p class="card-text">Duration</p>
+                </div>
+                <div class="col-md-2">
+                  <p class="card-text">
+                    <strong></strong>
+                  </p>
+                  <p class="card-text">Arrival</p>
+                  <p class="text-danger"></p>
+                </div>
+                <div class="col-md-2">
+                  <p class="card-text"><strong>4.5</strong> ⭐</p>
+                  <p class="card-text">567 Ratings</p>
+                </div>
+                <div class="col-md-2">
+                  <p class="card-text">
+                    <strong>INR </strong>
+                  </p>
+                  <p class="card-text"></p>
+                </div>
+                <div class="col-md-2 text-end">
+                  <button
+                    class="btn btn-danger"
+                    routerLinkActive="router-link-active"
+                  >
+                    Book Seat
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>

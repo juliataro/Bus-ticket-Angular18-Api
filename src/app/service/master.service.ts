@@ -6,11 +6,11 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class MasterService {
-  apiURl: string = "/api";
+  apiURL: string = "/api/BusBooking/";
 
   constructor(private http: HttpClient) {}
 
   getLocations(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiURl}/BusBooking/GetBusLocations`);
+    return this.http.get<any[]>(this.apiURL + "GetBusLocations");
   }
 }

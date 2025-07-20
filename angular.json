@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "bus-ticket-app": {
+    "bus-booking-angular-18": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/bus-ticket-app",
+            "outputPath": "dist/bus-booking-angular-18",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,6 +27,8 @@
               }
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -50,22 +52,25 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "styles": [
+                "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "./node_modules/font-awesome/css/font-awesome.min.css",
+                "src/styles.css"
+              ],
+              "scripts": []
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "proxyConfig": "proxy.conf.json"
-          },
           "configurations": {
             "production": {
-              "buildTarget": "bus-ticket-app:build:production"
+              "buildTarget": "bus-booking-angular-18:build:production"
             },
             "development": {
-              "buildTarget": "bus-ticket-app:build:development"
+              "buildTarget": "bus-booking-angular-18:build:development"
             }
           },
           "defaultConfiguration": "development"
